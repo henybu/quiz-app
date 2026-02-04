@@ -50,9 +50,13 @@ background: #001e4d;
     transition: all 0.3s; /* plynulý prechod medzi dvoma stavmi; všetky vlastnosti, čo sa zmenia, zmeň plynulo za 0,3 s*/
 }
 
-.btn:hover{
+.btn:hover:not([disabled]){ /*:not() = okrem, vyber všetko, čo NEMÁ atribut disabled; [disabled] = atribútový selektor, vyberá HTML elementy, ktoré majú atribút <button disabled="true">, hover efekt sa aplikuje na všetky .btn tlačidlá OKREM tých, ktoré sú disabled. */
     background: #222;
     color: #fff;
+}
+
+.btn:disabled{
+    cursor: no-drop;
 }
 
 #next-btn{
@@ -68,3 +72,10 @@ background: #001e4d;
     display: block;
 }
 
+.correct{
+    background: #9aeabc;
+}
+
+.incorrect{
+    background: #ff9393;
+}
